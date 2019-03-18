@@ -1,0 +1,19 @@
+{
+  "text-darker": "rgba(255, 255, 255, 0.15)",
+  "text-dark": "rgba(255, 255, 255, 0.3)",
+  "text": "rgba(255, 255, 255, 0.5)",
+  "orange1": "#ea7400",
+  "orange2": "#f29400",
+  "orange3": "#ff8a00",
+  "orange4": "#ff9d00",
+  "dove": "#7aa0c5",
+  "white": "#fff", 
+  "black": "#1b1f22",
+  "text-color2": "#414c63",
+  "text-color": "#2d3c4e",
+  "links-color": "#4b6fd7",
+  "bp-desktop-hd": "1800px",
+  "bp-desktop": "1200px",
+  "bp-tablets": "768px",
+  "bp-phones": "480px"
+}

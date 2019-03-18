@@ -1,0 +1,21 @@
+// mixins 
+mixin icon(name, className)
+  - var icon = require(`images/icons/${name}.svg`);
+  svg(class=className viewBox=icon.viewBox preserveAspectRatio="none")
+    use(xlink:href=icon.url)
+
+mixin image(path, className, altText='Контентное изображение')
+  img(src=require(`images/${path}`) class=className alt=altText)
+
+
+//- mixin list(parent, items)         
+//-   ul.(class=`${parent}__list`)
+//-     each item in items
+//-       li.(class=`${parent}__item`)            
+//-         a.(class=`${parent}__link`)= item
+
+//- mixin list(parent, items)
+//-   ul.'#{parent}__list'
+//-     each item in items
+//-       li.'#{parent}__item'
+//-         a.'#{parent}__link'= item
