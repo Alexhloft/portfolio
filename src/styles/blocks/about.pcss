@@ -1,0 +1,44 @@
+.about__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    font-weight: 600;
+    line-height: 30px;
+}
+
+.about__desc {
+    max-width: 530px;
+    margin-left: 150px;
+}
+
+.about__welcome {
+    margin-bottom: 20px;
+}
+
+.about__username {
+    margin-bottom: 30px;
+}
+
+.about__text {
+    margin-bottom: 90px;
+}
+
+.about__ps {
+    display: flex;
+    font-weight: normal;
+    font-style: italic;
+
+    position: relative;
+    &:before {
+        content: '*';
+        font-size: 48px;
+        color: rgba(255, 0, 0, 0.1);
+
+        position: absolute;
+        left: -55px;
+        top: 10px;
+    }
+}
+

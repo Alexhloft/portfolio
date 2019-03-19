@@ -1,0 +1,55 @@
+.soc {
+  display: flex;
+  align-items: center;
+
+  &--rounded {
+    .soc__link {
+      border: 1px solid $text;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      position: relative;
+      &:hover {
+        border-color: $orange5;
+      }
+
+      .soc__icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 20px;
+        height: 20px;
+      }
+
+      &:hover {
+        .soc__icon {
+          fill: $orange5;
+        }
+      }
+
+    }
+  }
+}
+
+.soc__item {
+  margin-right: 40px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.soc__link {
+  width: 25px;
+  height: 31px;
+  display: block;
+}
+
+.soc__icon {
+  fill: $text;
+
+  &:hover {
+    fill: $orange5;
+  }
+}

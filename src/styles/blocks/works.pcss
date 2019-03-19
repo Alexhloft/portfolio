@@ -1,0 +1,147 @@
+.works {
+    background: $white;
+}
+
+.works__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.works__title {
+    color: $black1;
+    margin-bottom: 90px;
+}
+
+.works__info {
+    display: flex;
+    align-items: flex-start;
+}
+
+.works__overview {
+    flex: 1;
+}
+
+.works__desc {
+    max-width: 340px;
+    color: $text-color;
+    font-weight: 600;
+
+    z-index: 1;
+}
+
+.works__img {
+    width: 880px;
+    height: 550px;
+    position: relative;
+    z-index: 1;
+
+    &:after {
+        content: '2';
+        font-size: 400px;
+        font-weight: 800;
+        color: #f0f0f0;
+        position: absolute;
+        right: -200px;
+        top: -50px;
+        z-index: -1;
+    }
+}
+
+.works__slider {
+    position: absolute;
+    right: -50px;
+    bottom: 60px;
+
+    display: flex;
+}
+
+.works__list {
+    display: flex;
+}
+
+.works__item {
+    width: 160px;
+    height: 100px;
+}
+
+.works__controls {
+    display: flex;
+    flex-direction: column;
+}
+
+.works__control {
+    background-color: $text-color;
+    &:hover {
+        background-color: $orange5;
+        cursor: pointer;
+    }
+
+    width: 50px;
+    height: 50px;
+    display: block;
+    position: relative;
+
+    &:before {
+        content: '';
+        background: svg-load('arrow-down.svg', fill=$white, width=100%, height=100%) center center no-repeat;
+        display: block;
+        width: 8px;
+        height: 10px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.works__control--left {
+    &:before {
+        transform: translate(-50%, -50%) rotate(180deg);
+    }
+}
+
+
+.works__tools-list {
+    display: flex;
+    margin-bottom: 50px;
+}
+
+.works__tools-item {
+    padding: 15px 20px;
+    background: $dove;
+    border-radius: 23px;
+    margin-right: 15px;
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.works__work-title {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.works__work-desc {
+    margin-bottom: 50px;
+}
+
+.works__work-link {
+    font-size: 18px;
+    color: $links-color;
+    display: flex;
+    align-items: center;
+
+    &:before {
+        content: '';
+        background: svg-load('link.svg', fill=$links-color, width=100%, height=100%) center center no-repeat;
+        display: block;
+        width: 15px;
+        height: 15px;
+        margin-top: 3px;
+        margin-right: 20px;
+    }
+}
+

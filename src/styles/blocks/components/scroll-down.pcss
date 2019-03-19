@@ -1,3 +1,23 @@
 .scroll-down {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    color: $white;
+    font-weight: 600;
+
+    &:hover {
+        color: $orange5;
+        
+        .scroll-down__icon {
+            fill: $orange5;
+        }
+    }
+}
+
+.scroll-down__icon {
+    width: 30px;
+    height: 30px;
+    fill: white;
+    margin-left: 15px;
 }
