@@ -1,7 +1,25 @@
 .rvws {
     background: url(../images/content/backgrounds/bg4.png) center center / cover no-repeat;
     position: relative;
-    height: 1400px;
+    height: 140vh;
+
+    &:before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(-90deg, transparent, rgba(27,31,34,.9) 50%);
+        position: absolute;
+    }
+
+    &:after {
+        content: '';
+        width: 577px;
+        height: 1366px;
+        background: url(../images/content/misc/foliage.png) no-repeat;
+        position: absolute;
+        right: 0;
+        bottom: 146px;
+    }
 }
 
 .rvws__foliage {

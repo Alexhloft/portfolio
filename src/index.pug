@@ -11,13 +11,13 @@ html(lang="ru")
     .wrapper
       .maincontent
         .welcome-section
-          section.hero.fullscreen-section#hero
+          section.hero#hero
             .hero__container.container
               header.header
                 .header__logo
                   a.logo(href="#hero") АХ
                 .header__menu
-                  nav.nav
+                  nav.nav.nav--header
                     ul.nav__list
                       -
                         var navList = [
@@ -30,7 +30,7 @@ html(lang="ru")
                           ]
                       each item in navList
                         li.nav__item
-                          a(href=`${item[1]}`).nav__link #{item[0]}
+                          a(href=`${item[1]}`, title=`${item[0]}`).nav__link #{item[0]}
                 .header__links
                   ul.soc
                     -
@@ -53,7 +53,7 @@ html(lang="ru")
                   +icon('scroll', 'scroll-down__icon')
           
 
-          section.about.fullscreen-section#about
+          section.about#about
             .about__container.container
               .about__info
                 .user
@@ -82,8 +82,6 @@ html(lang="ru")
 
 
         section.skills.fullscreen-section#skills
-          .skills__img-wrap
-              +image('content/misc/hands.png', 'skills__img')
           .skills__container.container            
             .skills__info
               article.skills__desc
@@ -122,8 +120,8 @@ html(lang="ru")
                       - for (var i = 0; i < n; i++)
                         li.works__item: +image(`content/works/work${i+1}.jpg`, 'works__item-img', `работа №${i+1} в списке`)
                     .works__controls
-                      .works__control.works__control--right
-                      .works__control.works__control--left
+                      button(type="button").works__control.works__control--right
+                      button(type="button").works__control.works__control--left
               article.works__desc
                 ul.works__tools-list
                   li.works__tools-item HTML
@@ -135,8 +133,6 @@ html(lang="ru")
 
 
         section.rvws#rvws
-          .rvws__foliage
-              +image('content/misc/foliage.png', 'rvws__foliage-img')
           .rvws__container.container
             .rvws__comments
               h2.rvws__title.title Что обо мне говорят
