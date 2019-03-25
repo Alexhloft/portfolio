@@ -12,37 +12,40 @@ html(lang="ru")
       .maincontent
         .welcome-section
           section.hero#hero
-            .hero__container.container
-              header.header
-                .header__logo
-                  a.logo(href="#hero") АХ
-                .header__menu
-                  nav.nav.nav--header
-                    ul.nav__list
-                      -
-                        var navList = [
-                            ['Главная', '#hero'],
-                            ['Обо мне', '#about'],
-                            ['Навыки', '#skills'],
-                            ['Работы', '#works'],
-                            ['Отзывы', '#rvws'],
-                            ['Связаться', '#form']
-                          ]
-                      each item in navList
-                        li.nav__item
-                          a(href=`${item[1]}`, title=`${item[0]}`).nav__link #{item[0]}
-                .header__links
-                  ul.soc
-                    -
-                      var socList = [
-                          ['insta', 'https://www.instagram.com/'],
-                          ['vk', 'https://vk.com/'],
-                          ['github', 'https://github.com/Alexhloft']
-                        ]
-                    each item in socList
-                      li.soc__item
-                        a(href=`${item[1]}`).soc__link
-                          +icon(`${item[0]}`, 'soc__icon')
+            .container.hero__container
+              .hero__header
+                header.header
+                  .header__logo
+                    a.logo(href="#hero") АХ
+                  .header__menu
+                    nav.nav.nav-header
+                      ul.nav__list
+                        -
+                          var navList = [
+                              ['Главная', '#hero'],
+                              ['Обо мне', '#about'],
+                              ['Навыки', '#skills'],
+                              ['Работы', '#works'],
+                              ['Отзывы', '#rvws'],
+                              ['Связаться', '#form']
+                            ]
+                        each item in navList
+                          li.nav__item
+                            a(href=`${item[1]}`, title=`${item[0]}`).nav__link #{item[0]}
+                  .header__links
+                    .header__soc
+                      ul.soc
+                        -
+                          var socList = [
+                              ['insta', 'https://www.instagram.com/'],
+                              ['vk', 'https://vk.com/'],
+                              ['github', 'https://github.com/Alexhloft']
+                            ]
+                        each item in socList
+                          li.soc__item
+                            a(href=`${item[1]}`).soc__link
+                              +icon(`${item[0]}`, 'soc__icon')
+                    .header__burger-menu
               .hero__content
                 .user-info
                   h1.user-info__desc Личный сайт <br>веб-разработчика
@@ -54,7 +57,7 @@ html(lang="ru")
           
 
           section.about#about
-            .about__container.container
+            .container.about__container
               .about__info
                 .user
                   .user__photo-wrap
@@ -82,33 +85,37 @@ html(lang="ru")
 
 
         section.skills.fullscreen-section#skills
-          .skills__container.container            
+          .container.skills__container           
             .skills__info
               article.skills__desc
                 h2.skills__title Чем я могу быть полезен вам
                 .skills__text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
               .skills__abilities
-                //-  ul.user-skills
-                //-    - 
-                //-      var skills = [
-                //-        ['Front-end', ['HTML5', 'CSS3', 'JavaScript', 'Jquery и Vue.js']],
-                //-        ['Workflow', ['Git', 'Terminal', 'Gulp', 'Webpack']],
-                //-      ]
-                //-    each item in skills
-                //-      li.user-skills__item.skills-row
-                //-        h3.skills-row__title #{item[0]}
-                //-        ul.skills-row__list
-                //-          each skill in item[1]
-                //-            li.skills-row__item
-                //-              .skill
-                //-                svg(viewBox="0 0 200 200" preserveAspectRatio="none").skill__shape
-                //-                  circle(r="80" cx="100" cy="100").skill__circle.skill__circle--under
-                //-                  circle(r="80" cx="100" cy="100").skill__circle.skill__circle--above
-                //-                .skill__title #{skill}
+                svg
+                  linearGradient(id="gradient" x1="0%" y1="0%" x2="100%" y2="0%")
+                    stop(offset="0%" stop-color="#ea7400")
+                    stop(offset="100%" stop-color="#f29400")
+                ul.user-skills
+                  - 
+                    var skills = [
+                      ['Front-end', ['HTML5', 'CSS3', 'JavaScript', 'Jquery и Vue.js']],
+                      ['Workflow', ['Git', 'Terminal', 'Gulp', 'Webpack']],
+                    ]
+                  each item in skills
+                    li.user-skills__item.skills-row
+                      h3.skills-row__title #{item[0]}
+                      ul.skills-row__list
+                        each skill in item[1]
+                          li.skills-row__item
+                            .skill
+                              svg(viewBox="0 0 100 100" preserveAspectRatio="none").skill__shape
+                                circle(r="40" cx="50" cy="50" stroke="#eaeaea").skill__circle.skill__circle--under
+                                circle(r="40" cx="50" cy="50" stroke="url(#gradient)").skill__circle.skill__circle--above
+                              .skill__title #{skill}
 
 
         section.works.fullscreen-section#works
-          .works__container.container
+          .container.works__container
             h2.works__title.title Мои работы
             .works__info
               .works__overview
@@ -133,52 +140,59 @@ html(lang="ru")
 
 
         section.rvws#rvws
-          .rvws__container.container
+          .container.rvws__container
             .rvws__comments
-              h2.rvws__title.title Что обо мне говорят
-              .rvws__controls
-                .rvws__controls-left
-                .rvws__controls-right
-              ul.rvws__list
-                - 
-                  var rvwsData = [
-                    {
-                      desc: 'Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!',
-                      name: 'Ковальчук Дмитрий',
-                      post: 'Основатель Loftschool'
-                    },
-                    {
-                      desc: 'Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах',
-                      name: 'Владимир Сабанцев',
-                      post: 'Преподаватель'
-                    }
-                  ]
-                - for (var i = 0; i < rvwsData.length; i++)
-                  li.rvws__item
-                    .rvws__desc #{rvwsData[i].desc}
-                    .rvws__author
-                      .rvws__avatar
-                        +image(`content/avatars/av${i+1}.png`, 'rvws__avatar-img', 'аватар автора')
-                      .rvws__author-info
-                        .rvws__name #{rvwsData[i].name}
-                        .rvws__post #{rvwsData[i].post}
+              .comments
+                .comments__wrap
+                  h2.comments__title.title Что обо мне говорят
+                  .comments__controls
+                    .comments__control.comments__control--left
+                    .comments__control.comments__control--right
+                ul.comments__list
+                  - 
+                    var rvwsData = [
+                      {
+                        path: 'av1',
+                        desc: 'Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!',
+                        name: 'Ковальчук Дмитрий',
+                        post: 'Основатель Loftschool'
+                      },
+                      {
+                        path: 'av2',
+                        desc: 'Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах',
+                        name: 'Владимир Сабанцев',
+                        post: 'Преподаватель'
+                      }
+                    ]
+                  - for (var i = 0; i < rvwsData.length; i++)
+                    li.comments__item
+                      .comments__desc #{rvwsData[i].desc}
+                      .comments__author
+                        .comments__avatar
+                          +image(`content/avatars/${rvwsData[i].path}.png`, 'comments__avatar-img', 'аватар автора')
+                        .comments__author-info
+                          .comments__name #{rvwsData[i].name}
+                          .comments__post #{rvwsData[i].post}
 
-              form.rvws__form#form
-                h2.rvws__form-title.title Связаться со мной
-                label.rvws__form-block
-                  .rvws__form-block-title Введите ваше имя
-                  input.rvws__input.rvws__form-name(name="name", type="text", placeholder="Имя", required)
-                label.rvws__form-block
-                  .rvws__form-block-title Введите ваш email
-                  input.rvws__input.rvws__form-email(name="email", type="email", placeholder="email@mail.ru", required)
-                label.rvws__form-block
-                  .rvws__form-block-title Сообщение к письму
-                  textarea.rvws__form-comment(name="comment", rows="2", placeholder="Сообщение", required)
-                button.rvws__submit.btn(type="submit") Отправить
+            .rvws__form#form
+              form.form
+                h2.form__title.title Связаться со мной
+                .form__row
+                  label.form__block
+                    .form__block-title Введите ваше имя
+                    input.form__input.form__name(name="name", type="text", placeholder="Имя", required)
+                  label.form__block
+                    .form__block-title Введите ваш email
+                    input.form__input.form__email(name="email", type="email", placeholder="email@mail.ru", required)
+                .form__row
+                  label.form__block
+                    .form__block-title Сообщение к письму
+                    textarea.form__comment(name="comment", placeholder="Сообщение", required)
+                button.form__submit.btn(type="submit") Отправить
 
 
         section.footer
-          .footer__container.container
+          .container.footer__container
             .footer__copyright
               .copyright
                 .copyright__year © 2019
@@ -187,7 +201,7 @@ html(lang="ru")
                   .copyright__desc Личный сайт веб-разработчика
             .footer__content
               .footer__menu
-                nav.nav
+                nav.nav.nav-footer
                   ul.nav__list
                     each item in navList
                       li.nav__item

@@ -1,15 +1,28 @@
 .copyright {
     color: $text-darker;
     display: flex;
+    @include desktop {
+        flex-direction: column;
+    }
 }
 
 .copyright__year {
     font-size: 48px;
     color: $copy;
+    white-space: nowrap;
 }
 
 .copyright__info {
-    display: block;
+    max-width: 150px;
+    @include phones {
+        max-width: 100%;
+    }
+    line-height: 30px;
+    margin-top: 10px;
+    margin-left: 50px;
+    @include desktop {
+        margin-left: 0px;
+    }
 }
 
 .copyright__name {
@@ -17,4 +30,51 @@
     font-weight: bold;
     text-transform: uppercase;
     color: $white;
+    margin-bottom: 20px;
+    @include phones {
+        margin-bottom: 5px;
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+// .copyright {
+//     color: $text-darker;
+//     display: flex;
+//     flex-wrap: wrap;
+// }
+
+// .copyright__year {
+//     font-size: 48px;
+//     color: $copy;
+//     white-space: nowrap;
+// }
+
+// .copyright__info {
+//     display: flex;
+//     flex-direction: column;
+//     max-width: 140px;
+//     margin-left: 60px;
+//     @include desktop {
+//         margin-left: 0;
+//         max-width: 320px;
+//         margin-top: 10px;
+//     }
+// }
+
+// .copyright__name {
+//     font-size: 18px;
+//     font-weight: bold;
+//     text-transform: uppercase;
+//     color: $white;
+//     margin-bottom: 25px;
+// }

@@ -1,13 +1,37 @@
 .header {
   display: flex;
   justify-content: space-between;
-  // margin-top: 60px;
   align-items: center;
 }
 
 .header__menu {
+  margin: 0 20px;
   flex: 1;
   display: flex;
   justify-content: center;
-  margin: 0 20px;
+  @include tablets {
+    display: none;
+  }
+}
+
+.header__links {
+  display: flex;
+  align-items: center;
+}
+
+.header__soc {
+  @include phones {
+    display: none;
+  }
+}
+
+.header__burger-menu {
+  display: none;
+  @include tablets {
+    display: block;
+  }
+  background: gray;
+  width: 25px;
+  height: 20px;
+  margin-left: 90px;
 }

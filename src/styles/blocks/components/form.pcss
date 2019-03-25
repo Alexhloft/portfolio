@@ -1,0 +1,70 @@
+.form {
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+}
+
+.form__title {
+    margin-bottom: 80px;
+}
+
+.form__row {
+    display: flex;
+    margin-bottom: 40px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.form__block {
+    width: 100%;
+    margin-right: 50px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid $white;
+}
+
+.form__block-title {
+    margin-bottom: 20px;
+    padding-left: 45px;
+}
+
+.form__input, .form__comment {
+    font-weight: bold;
+    color: $white;
+    background: none;
+    border: none;
+    padding-left: 45px;
+    width: 100%;
+
+    &:before {
+        content: '';
+        display: block;
+        width: 30px;
+        height: 30px;
+    }
+}
+
+.form__name:before {
+    background: svg-load('user.svg', fill=$text, width=100%, height=100%) center center no-repeat;
+}
+
+.form__email:before {
+    background: svg-load('envelope.svg', fill=$text, width=100%, height=100%) center center no-repeat;
+}
+
+.form__comment {
+    width: 100%;
+    height: 55px;
+    resize: none;
+
+    &:before {
+        background: svg-load('message.svg', fill=$text, width=100%, height=100%) center center no-repeat;
+    }
+}
+
+.form__submit {
+    margin-top: 60px;
+    max-width: 350px;
+    height: 80px;
+}

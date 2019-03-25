@@ -13,22 +13,23 @@
 
     &:after {
         content: '';
-        width: 577px;
-        height: 1366px;
+        width: 30%;
+        height: 100%;
         background: url(../images/content/misc/foliage.png) no-repeat;
+        background-size: contain;
+        background-position: right;
         position: absolute;
         right: 0;
         bottom: 146px;
     }
 }
 
-.rvws__foliage {
-    position: absolute;
-    right: 0;
-    top: -150px;
+.rvws__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
-.rvws__submit {
-    width: 350px;
-    height: 80px;
+.rvws__form {
+    max-width: 865px;
 }

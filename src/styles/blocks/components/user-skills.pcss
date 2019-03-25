@@ -1,0 +1,39 @@
+.skills-row {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.skills-row__item {
+    width: 25%;
+}
+
+.skill {
+    max-width: 140px;
+    position: relative;
+}
+
+.skill__title {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    font-weight: bold;
+}
+
+
+
+.skill__circle {
+    fill: transparent;
+}
+
+.skill__circle--under {
+    stroke-width: 5px;
+}
+
+.skill__circle--above {
+    transform: rotate(180 50 50);
+    stroke-width: 12px;
+    stroke-dasharray: 251;
+    stroke-dashoffset: 100;
+}

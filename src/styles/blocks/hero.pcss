@@ -13,15 +13,30 @@
   height: 100%;
 }
 
+.hero__header {
+  @include tablets {
+    margin-top: 60px;
+  }
+}
+
 .hero__content {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
+  @include tablets {
+    flex: 0.5;
+  }
+  @include phones {
+    flex: 0.8;
+  }
 }
 
 .hero__buttons {
   display: flex;
   justify-content: center;
   margin-bottom: 10%;
+  @include tablets {
+    display: none;
+  }
 }
