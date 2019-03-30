@@ -10,12 +10,19 @@
         background-size: contain;
         position: absolute;
         bottom: -130px;
+        @include desktop {
+            width: 40%;
+        }
         @include tablets {
             width: 50%;
             height: 50%;
             transform: rotate(-90deg);
-            bottom: -50px;
-            right: 25%;
+            transform-origin: 0 100%;
+            bottom: 0;
+            right: -30%;
+        }
+        @include phones {
+            right: -50%;
         }
     }
 }
@@ -38,9 +45,11 @@
     margin-bottom: 90px;
     @include tablets {
         text-align: center;
+        margin-bottom: 70px;
     }
     @include phones {
         text-align: left;
+        margin-bottom: 50px;
     }
 }
 
@@ -55,4 +64,13 @@
 
 .skills__text {
     line-height: 24px;
+}
+
+.skills__abilities {
+    width: 60%;
+    align-self: flex-end;
+    @include tablets {
+        width: 100%;
+        align-self: center;
+    }
 }

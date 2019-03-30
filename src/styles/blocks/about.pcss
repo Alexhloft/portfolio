@@ -1,6 +1,11 @@
 .about {
+    background: url(../images/content/backgrounds/bg2.png) center center / cover no-repeat;
     height: 80vh;
     min-height: 550px;
+    overflow: hidden;
+    @include phones {
+        height: 100vh;
+    }
 }
 
 .about__container {
@@ -42,8 +47,8 @@
 
 .about__text {
     margin-bottom: 90px;
-    @include phones {
-        margin-bottom: 70px;
+    @include tablets {
+        margin-bottom: 50px;
     }
 }
 

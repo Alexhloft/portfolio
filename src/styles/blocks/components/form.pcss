@@ -5,23 +5,51 @@
 }
 
 .form__title {
-    margin-bottom: 80px;
+    margin-bottom: 75px;
+    @include tablets {
+        margin-bottom: 50px;
+        font-size: 30px !important;
+        text-align: center;
+    }
+    @include phones {
+        font-size: 24px !important;
+        text-align: left;
+    }
 }
 
 .form__row {
     display: flex;
     margin-bottom: 40px;
+    @include phones {
+        flex-direction: column;
+    }
+}
 
-    &:last-child {
-        margin-bottom: 0;
+.form__row--extramargin {
+    margin-bottom: 60px;
+    @include tablets {
+        margin-bottom: 40px;
     }
 }
 
 .form__block {
     width: 100%;
-    margin-right: 50px;
     padding-bottom: 20px;
     border-bottom: 1px solid $white;
+    position: relative;
+    @include phones {
+        margin-bottom: 40px;
+        &:last-child {
+            margin-bottom: 0px;
+        }
+    }
+}
+
+.form__block--margin-l {
+    margin-left: 50px;
+    @include phones {
+        margin-left: 0px;
+    }
 }
 
 .form__block-title {
@@ -37,20 +65,9 @@
     padding-left: 45px;
     width: 100%;
 
-    &:before {
-        content: '';
-        display: block;
-        width: 30px;
-        height: 30px;
+    &::placeholder {
+        color: $text-dark;
     }
-}
-
-.form__name:before {
-    background: svg-load('user.svg', fill=$text, width=100%, height=100%) center center no-repeat;
-}
-
-.form__email:before {
-    background: svg-load('envelope.svg', fill=$text, width=100%, height=100%) center center no-repeat;
 }
 
 .form__comment {
@@ -64,7 +81,24 @@
 }
 
 .form__submit {
-    margin-top: 60px;
-    max-width: 350px;
+    width: 350px;
     height: 80px;
+    @include tablets {
+        margin: 0 auto;
+    }
+    @include phones {
+        width: 260px;
+        height: 60px;
+    }
 }
+
+.form__icon {
+    fill: $text;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 0;
+}
+
+
+

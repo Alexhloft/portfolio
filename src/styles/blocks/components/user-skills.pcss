@@ -1,15 +1,48 @@
+.hidden-gradient {
+    position: absolute;
+    top: 0;
+    left: -99999px;
+}
+
 .skills-row {
     display: flex;
+    flex-direction: column;
     width: 100%;
     flex-wrap: wrap;
+    margin-bottom: 5%;
+}
+
+.skills-row__title {
+    color: $white;
+    font-weight: 600;
+    margin-bottom: 20px;
+    @include tablets {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.skills-row__list {
+    display: flex;
+    margin-left: -5%;
+    @include tablets {
+        justify-content: center;
+    }
+    @include phones {
+        flex-wrap: wrap;
+    }
 }
 
 .skills-row__item {
-    width: 25%;
+    margin-left: 5%;
+    @include phones {
+        margin-left: 2%;
+    }
 }
 
+
 .skill {
-    max-width: 140px;
+    width: 140px;
     position: relative;
 }
 
@@ -28,12 +61,12 @@
 }
 
 .skill__circle--under {
-    stroke-width: 5px;
+    stroke-width: 3px;
 }
 
 .skill__circle--above {
     transform: rotate(180 50 50);
-    stroke-width: 12px;
+    stroke-width: 7px;
     stroke-dasharray: 251;
-    stroke-dashoffset: 100;
+    stroke-dashoffset: 380;
 }

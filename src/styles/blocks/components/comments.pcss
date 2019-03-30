@@ -1,16 +1,32 @@
 .comments {
     display: flex;
     flex-direction: column;
-    max-width: 980px;
 }
 
 .comments__wrap { 
-    margin-bottom: 80px;
     display: flex;
+    margin-bottom: 90px;
+    @include tablets {
+        margin-bottom: 70px;
+    }
+    @include phones {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 35px;
+    }
 }
 
 .comments__title {
     margin-right: 100px;
+    @include tablets {
+        margin-right: 80px;
+        font-size: 30px !important;
+    }
+    @include phones {
+        margin-right: 0;
+        font-size: 24px !important;
+        margin-bottom: 30px;
+    }
 }
 
 .comments__controls {
@@ -31,7 +47,6 @@
         border-color: $orange5;
         cursor: pointer;
     }
-
     &:after {
         content: '';
         background: svg-load('arrow-down.svg', fill=$white, width=100%, height=100%) center center no-repeat;
@@ -42,10 +57,9 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-
-        &:hover {
-            fill: $orange5;
-        }
+    }
+    &:hover:after {
+        background: svg-load('arrow-down.svg', fill=$orange5, width=100%, height=100%) center center no-repeat;
     }
 }
 
@@ -55,17 +69,36 @@
 
 .comments__list {
     display: flex;
+    max-width: 850px;
+    @include tablets {
+        max-width: 700px;
+        align-self: center;
+    }
+    @include phones {
+        max-width: 300px;
+        overflow: hidden;
+    }
 }
 
 .comments__item {
     max-width: 350px;
+    @include tablets {
+        max-width: 300px;
+    }
     font-weight: 600;
     display: flex;
     flex-direction: column;
     margin-right: 165px;
     &:last-child {
         margin-right: 0;
-    }    
+    }
+    @include tablets {
+        margin-right: 100px;
+    }
+    @include phones {
+        margin-right: 0;
+        flex-shrink: 0;
+    }
 }
 
 .comments__desc {
@@ -81,6 +114,11 @@
         position: absolute;
         top: 0;
         left: -100px;
+        @include tablets {
+            width: 45px;
+            height: 35px;
+            left: -55px;
+        }
     }
     margin-bottom: 30px;
 }
@@ -93,16 +131,23 @@
 .comments__avatar {
     width: 75px;
     height: 75px;
+    flex-shrink: 0;
     margin-right: 30px;
+    @include tablets {
+        margin-right: 20px;
+    }
 }
 
 .comments__avatar-img {
     object-fit: cover;
     object-position: top;
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
 }
 
 .comments__name {
+    font-size: 18px;
     font-weight: bold;
     color: $white;
     margin-bottom: 10px;

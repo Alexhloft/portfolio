@@ -1,5 +1,6 @@
 .works {
     background: $white;
+    overflow: hidden;
 }
 
 .works__container {
@@ -11,7 +12,13 @@
 
 .works__title {
     color: $black1;
-    margin-bottom: 90px;
+    margin-bottom: 7.6%;
+    @include desktop {
+        margin-bottom: 6%;
+    }
+    @include phones {
+        align-self: center;
+    }
 }
 
 .works__info {
@@ -27,6 +34,11 @@
     margin-right: 180px;
     @include tablets {
         margin-right: 0;
+        margin-bottom: 105px;
+    }
+    @include phones {
+        margin-right: 0;
+        margin-bottom: 70px;
     }
 }
 
@@ -34,8 +46,17 @@
     color: $black3;
     max-width: 340px;
     font-weight: 600;
-
     z-index: 1;
+
+    @include tablets {
+        max-width: 70%;
+        align-self: center;
+        text-align: center;
+    }
+    @include phones {
+        max-width: 100%;
+        text-align: left;
+    }
 }
 
 .works__img {
@@ -66,15 +87,42 @@
     bottom: 60px;
 
     display: flex;
+
+    @include tablets {
+        bottom: 40px;
+    }
+    @include phones {
+        right: 0;
+        bottom: 0;
+    }
 }
 
 .works__list {
     display: flex;
+    overflow: hidden;
+    height: 100px;
+    width: calc(180px*4);
+    @include desktop {
+        width: calc(180px*3);
+    }
+    @include phones {
+        width: 0;
+    }
 }
 
-.works__item {
-    width: 160px;
+.works__item { 
+    width: 180px;
     height: 100px;
+    flex-shrink: 0;
+
+    &--active, :hover {
+        border: 3px solid $orange5;
+    }
+}
+
+.works__item-img {
+    width: 100%;
+    height: 100%;
 }
 
 .works__controls {
@@ -116,7 +164,11 @@
 
 .works__tools-list {
     display: flex;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
+    @include tablets {
+        justify-content: center;
+        margin-bottom: 25px;
+    }
 }
 
 .works__tools-item {
@@ -134,16 +186,25 @@
     font-size: 30px;
     font-weight: bold;
     margin-bottom: 40px;
+    @include tablets {
+        margin-bottom: 30px;
+    }
+    @include phones {
+        margin-bottom: 20px;
+    }
 }
 
 .works__work-desc {
-    margin-bottom: 50px;
+    margin-bottom: 40px;
+    @include tablets {
+        margin-bottom: 30px;
+    }
 }
 
 .works__work-link {
     font-size: 18px;
     color: $links-color;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     
     &:before {

@@ -2,6 +2,12 @@
     background: url(../images/content/backgrounds/bg4.png) center center / cover no-repeat;
     position: relative;
     height: 140vh;
+    @include tablets {
+        height: 100vh;
+    }
+    @include phones {
+        height: 120vh;
+    }
 
     &:before {
         content: '';
@@ -28,8 +34,15 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    position: relative;
+    height: 100%;
+    z-index: 5;
 }
 
 .rvws__form {
     max-width: 865px;
+}
+
+.rvws__comments {
+    max-width: 980px;
 }
