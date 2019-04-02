@@ -1,38 +1,49 @@
 .parallax {
-    height: 100%;
+    height: 180vh;
     overflow: hidden;
-    position: relative;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
 .parallax__layer {
-    position: absolute;
+   position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    right: 0;
+    bottom: 0;
+    will-change: transform;
 
     &:nth-child(1) {
-        .parallax__image {
+        .parallax__layer-img {
             top: 0;
             left: 0;
         }
     }
     &:nth-child(2) {
-        .parallax__image {
-            top: 700px;
+        .parallax__layer-img {
+            top: 400px;
             left: 0;
         }
     }
     &:nth-child(3) {
-        .parallax__image {
-            top: 1000px;
+        .parallax__layer-img {
+            top: 500px;
             left: 0;
         }
     }
     &:nth-child(4) {
-        .parallax__image {
-            top: 1860px;
+        .parallax__layer-img {
+            top: 965px;
             left: 0;
         }
     }
+}
+
+.parallax__layer-img{
+    max-width: 1920px;
+    max-height: none;
+    position: absolute;
 }
