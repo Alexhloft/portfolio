@@ -186,12 +186,12 @@ html(lang="ru")
                         name: 'Владимир Сабанцев',
                         post: 'Преподаватель'
                       },
-                      //- {
-                      //-   path: 'av2',
-                      //-   desc: 'Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах',
-                      //-   name: 'Владимир Сабанцев',
-                      //-   post: 'Преподаватель'
-                      //- }
+                      {
+                        path: 'av2',
+                        desc: 'Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах',
+                        name: 'Владимир Сабанцев',
+                        post: 'Преподаватель'
+                      }
                     ]
                   - for (var i = 0; i < rvwsData.length; i++)
                     .comments__item
@@ -251,22 +251,22 @@ html(lang="ru")
                   .footer__text-author Martin Golding
       
 
-      .overlay
-        .overlay__menu
-          .overlay-menu
-            .overlay-menu__nav
-              nav.nav.nav-overlay
-                ul.nav__list
-                  each item in navList
-                    li.nav__item
-                      a(href=`${item[1]}`, title=`${item[0]}`).nav__link #{item[0]}
-            .overlay-menu__close-btn
-              .close-btn.close-btn--overlay
-            .overlay-menu__soc
-              ul.soc.soc--overlay
-                each item in socList
-                  li.soc__item
-                    a(href=`${item[1]}`).soc__link
-                      +icon(`${item[0]}`, 'soc__icon')
+      //- .overlay
+      //-   .overlay__menu
+      //-     .overlay-menu
+      //-       .overlay-menu__nav
+      //-         nav.nav.nav-overlay
+      //-           ul.nav__list
+      //-             each item in navList
+      //-               li.nav__item
+      //-                 a(href=`${item[1]}`, title=`${item[0]}`).nav__link #{item[0]}
+      //-       .overlay-menu__close-btn
+      //-         .close-btn.close-btn--overlay
+      //-       .overlay-menu__soc
+      //-         ul.soc.soc--overlay
+      //-           each item in socList
+      //-             li.soc__item
+      //-               a(href=`${item[1]}`).soc__link
+      //-                 +icon(`${item[0]}`, 'soc__icon')
 
 include ./templates/entry.pug

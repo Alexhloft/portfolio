@@ -1,5 +1,5 @@
 import Vue from "vue";
-import Flickity from 'vue-flickity';
+import flickity from 'vue-flickity';
 
 new Vue({
     el: "#reviews",
