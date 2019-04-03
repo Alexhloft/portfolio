@@ -102,28 +102,38 @@ html(lang="ru")
               article.skills__desc
                 h2.skills__title Чем я могу быть полезен вам
                 .skills__text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
-              .skills__abilities
-                svg.hidden-gradient
-                  linearGradient(id="gradient" x1="0%" y1="0%" x2="100%" y2="0%")
-                    stop(offset="0%" stop-color="#ea7400")
-                    stop(offset="100%" stop-color="#f29400")
-                ul.user-skills
-                  - 
-                    var skills = [
-                      ['Front-end', ['HTML5', 'CSS3', 'JavaScript', 'Jquery и Vue.js']],
-                      ['Workflow', ['Git', 'Terminal', 'Gulp', 'Webpack']],
-                    ]
-                  each item in skills
-                    li.user-skills__item.skills-row
-                      h3.skills-row__title #{item[0]}
-                      ul.skills-row__list
-                        each skill in item[1]
-                          li.skills-row__item
-                            .skill
-                              svg(viewBox="0 0 100 100" preserveAspectRatio="none").skill__shape
-                                circle(r="40" cx="50" cy="50" stroke="#403e3e").skill__circle.skill__circle--under
-                                circle(r="40" cx="50" cy="50" stroke="url(#gradient)").skill__circle.skill__circle--above
-                              .skill__title #{skill}
+              .skills__abilities.abilities
+                #skills-component
+
+        //- section.skills.fullscreen-section#skills
+        //-   .container.skills__container           
+        //-     .skills__info
+        //-       article.skills__desc
+        //-         h2.skills__title Чем я могу быть полезен вам
+        //-         .skills__text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+        //-       .skills__abilities
+        //-         svg.hidden-gradient
+        //-           linearGradient(id="gradient" x1="0%" y1="0%" x2="100%" y2="0%")
+        //-             stop(offset="0%" stop-color="#ea7400")
+        //-             stop(offset="100%" stop-color="#f29400")
+        //-         ul.user-skills
+        //-           - 
+        //-             var skills = [
+        //-               ['Front-end', ['HTML5', 'CSS3', 'JavaScript', 'Jquery и Vue.js']],
+        //-               ['Workflow', ['Git', 'Terminal', 'Gulp', 'Webpack']],
+        //-             ]
+        //-           each item in skills
+        //-             li.user-skills__item.skills-row
+        //-               h3.skills-row__title #{item[0]}
+        //-               ul.skills-row__list
+        //-                 each skill in item[1]
+        //-                   li.skills-row__item
+        //-                     .skill
+        //-                       svg(viewBox="0 0 100 100" preserveAspectRatio="none").skill__shape
+        //-                         circle(r="40" cx="50" cy="50" stroke="#403e3e").skill__circle.skill__circle--under
+        //-                         circle(r="40" cx="50" cy="50" stroke="url(#gradient)").skill__circle.skill__circle--above
+        //-                       .skill__title #{skill}
+
 
 
         section.works.fullscreen-section#works
@@ -159,9 +169,9 @@ html(lang="ru")
                 .comments__wrap
                   h2.title.comments__title Что обо мне говорят
                   .comments__controls
-                    .comments__control.comments__control--left
-                    .comments__control.comments__control--right
-                ul.comments__list
+                    .comments__control.comments__control--left(@click="previous()")
+                    .comments__control.comments__control--right(@click="next()")
+                flickity(ref="flickity" :options="flickityOptions").comments__list
                   - 
                     var rvwsData = [
                       {
@@ -175,10 +185,16 @@ html(lang="ru")
                         desc: 'Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах',
                         name: 'Владимир Сабанцев',
                         post: 'Преподаватель'
-                      }
+                      },
+                      //- {
+                      //-   path: 'av2',
+                      //-   desc: 'Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах',
+                      //-   name: 'Владимир Сабанцев',
+                      //-   post: 'Преподаватель'
+                      //- }
                     ]
                   - for (var i = 0; i < rvwsData.length; i++)
-                    li.comments__item
+                    .comments__item
                       .comments__desc #{rvwsData[i].desc}
                       .comments__author
                         .comments__avatar
@@ -252,3 +268,5 @@ html(lang="ru")
                   li.soc__item
                     a(href=`${item[1]}`).soc__link
                       +icon(`${item[0]}`, 'soc__icon')
+
+include ./templates/entry.pug
