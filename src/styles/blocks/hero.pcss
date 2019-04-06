@@ -1,8 +1,11 @@
 .hero {
-  height: 150vh;
+  height: 135vh;
   min-height: 650px;
   position: relative;
-  z-index: 1;
+
+  @include tablets {
+    background: url(../images/content/backgrounds/bg1.png) center center / cover no-repeat;
+  }
 
   &:before {
     content: "";

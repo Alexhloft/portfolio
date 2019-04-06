@@ -1,6 +1,6 @@
 import { arrayExpression } from "babel-types";
 
-const parallax = document.querySelector(".parallax");
+const parallax = document.querySelector(".parallax__inner");
 const layers = parallax.children;
 
 console.log('layers');
