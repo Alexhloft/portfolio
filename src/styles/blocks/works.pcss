@@ -71,7 +71,7 @@
     z-index: 1;
 
     &:after {
-        content: '2';
+        content: attr(data-v-ndx);
         font-size: 400px;
         font-weight: 800;
         color: #f0f0f0;
@@ -82,7 +82,7 @@
     }
 }
 
-.works__slider {
+.works__thumbs {
     position: absolute;
     right: -50px;
     bottom: 60px;
@@ -156,7 +156,7 @@
     }
 }
 
-.works__control--left {
+.works__control--prev {
     &:before {
         transform: translate(-50%, -50%) rotate(180deg);
     }

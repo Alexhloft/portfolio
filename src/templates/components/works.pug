@@ -1,0 +1,64 @@
+// весь шаблон
+script(type='text/x-template')#works-info
+  .works__info
+    overview(
+        :works="works"
+        :currentWork="currentWork"
+        :currentIndex="currentIndex"
+        @slide="handelSlide"
+        @changeSlide="changeSlide"
+      )
+    descr(
+      :currentWork="currentWork"
+    )
+
+
+// слайдер
+script(type='text/x-template')#works-overview
+  .works__overview
+    .works__img(:data-v-ndx="currentIndex + 1")
+      img.works__img-pic(:src="currentWork.img")
+      .works__thumbs
+        thumbs(
+          :works="works"
+          :currentWork="currentWork"
+          @changeSlide="clickSlide => $emit('changeSlide', clickSlide)"
+        )
+        btns(
+          @slide="dir => $emit('slide', dir)"
+        )
+
+// превьюшки
+script(type='text/x-template')#works-thumbs
+  ul.works__list      
+    li.works__item( 
+        v-for="work in works"
+        :key="work.id"
+        :src="work.img"
+        :class="{works__item--active: currentWork.id == work.id}"
+        @click="$emit('changeSlide', work.id)"
+    )
+      img.works__item-img(:src="work.img")
+
+// кнопки управления слайдером
+script(type='text/x-template')#works-btns
+  .works__controls
+    button(type="button" @click="$emit('slide','next')").works__control.works__control--next
+    button(type="button" @click="$emit('slide','prev')").works__control.works__control--prev
+
+
+// описание
+script(type='text/x-template')#works-desc
+  article.works__desc
+    tools(
+      :tools="tools"
+    )
+    .works__work-info
+      h3.works__work-title {{currentWork.title}}
+      .works__work-desc {{currentWork.desc}}
+      a(:href="currentWork.link" target="_blank").works__work-link Посмотреть сайт
+
+// инструменты
+script(type='text/x-template')#works-tools
+  ul.works__tools-list
+    li.works__tools-item(v-for="tool in tools") {{tool}}
