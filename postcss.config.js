@@ -11,6 +11,7 @@ module.exports = {
       browsers: ["last 2 versions"],
       cascade: false
     }),
+    require("postcss-each"),
     require("postcss-advanced-variables")({
       variables: JSON.parse(
         fs.readFileSync("./src/styles/variables.json", "utf-8")

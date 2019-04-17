@@ -35,7 +35,7 @@ script(type='text/x-template')#works-thumbs
         v-for="work in works"
         :key="work.id"
         :src="work.img"
-        :class="{works__item--active: currentWork.id == work.id}"
+        :class="{'works__item--active': currentWork.id == work.id}"
         @click="$emit('changeSlide', work.id)"
     )
       img.works__item-img(:src="work.img")

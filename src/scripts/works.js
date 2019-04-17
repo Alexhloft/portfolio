@@ -1,5 +1,24 @@
 import Vue from 'vue';
 
+const thumbs = {
+    template: "#works-thumbs",
+    props: {
+        works: Array,
+        currentWork: Object
+    }
+};
+
+const btns = {
+    template: "#works-btns"
+};
+
+const tools = {
+    template: "#works-tools",
+    props: {
+        tools: Array
+    }
+};
+
 const overview = {
     template: "#works-overview",
     components: {
@@ -13,19 +32,6 @@ const overview = {
         clickSlide: Number
     }
 };
-
-const thumbs = {
-    template: "#works-thumbs",
-    props: {
-        works: Array,
-        currentWork: Object
-    }
-};
-
-const btns = {
-    template: "#works-btns"
-};
-
 const descr = {
     template: "#works-desc",
     components: {
@@ -40,14 +46,6 @@ const descr = {
         }
     }
 };
-
-const tools = {
-    template: "#works-tools",
-    props: {
-        tools: Array
-    }
-};
-
 
 new Vue({
     template: '#works-info',

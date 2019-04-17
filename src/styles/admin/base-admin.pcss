@@ -1,0 +1,57 @@
+.root-wrapper-container {
+    height: 100%;
+  }
+  
+  .root-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  .admin-wrapper {
+    display: flex;
+  
+    .maincontent {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+  }
+  
+  .content-container {
+    background: url("~images/content/backgrounds/admin.jpg") center center no-repeat / cover;
+    flex: 1;
+    padding-top: 60px;
+  
+    @include phones {
+      padding-top: 30px;
+    }
+  }
+  
+  .page-title {
+    margin-bottom: 60px;
+    font-size: 21px;
+    font-weight: bold;
+  }
+  
+  .tooltips-container {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 110%);
+    visibility: hidden;
+    transition: 0.3s;
+  
+    &.showed {
+      transform: translate(-50%, 0%);
+      visibility: visible;
+    }
+  }
+  
+  .input-edit{
+    display:none;
+  }
+  button {
+    background: transparent;
+  }
