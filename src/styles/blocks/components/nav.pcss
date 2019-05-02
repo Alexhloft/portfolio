@@ -2,10 +2,19 @@
   color: $white;
 }
 
+.nav--overlay {
+  color: $text-color2;
+}
+
 .nav__list {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+}
+
+.nav__list--overlay {
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .nav__link {
@@ -19,10 +28,16 @@
   }
 }
 
+.nav__link--overlay {
+  padding: 18px 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
 .nav-header {
   .nav__link {
     &:hover {
-      font-weight: 600;
+      font-weight: 700;
       border-color: $orange5;
     }
 

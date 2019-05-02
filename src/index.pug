@@ -56,7 +56,7 @@ html(lang="ru")
                               a(href=`${item[1]}`).soc__link
                                 +icon(`${item[0]}`, 'soc__icon')
                       .header__burger-menu
-                        .menu-btn
+                        .menu-btn#toggle
                           span.menu-btn__item.menu-btn--top
                           span.menu-btn__item.menu-btn--middle
                           span.menu-btn__item.menu-btn--bottom
@@ -209,22 +209,20 @@ html(lang="ru")
                   .footer__text-author Martin Golding
       
 
-      //- .overlay
-      //-   .overlay__menu
-      //-     .overlay-menu
-      //-       .overlay-menu__nav
-      //-         nav.nav.nav-overlay
-      //-           ul.nav__list
-      //-             each item in navList
-      //-               li.nav__item
-      //-                 a(href=`${item[1]}`, title=`${item[0]}`).nav__link #{item[0]}
-      //-       .overlay-menu__close-btn
-      //-         .close-btn.close-btn--overlay
-      //-       .overlay-menu__soc
-      //-         ul.soc.soc--overlay
-      //-           each item in socList
-      //-             li.soc__item
-      //-               a(href=`${item[1]}`).soc__link
-      //-                 +icon(`${item[0]}`, 'soc__icon')
+      .overlay#overlay
+        .overlay__menu
+          .overlay-menu
+            .overlay-menu__nav
+              nav.nav.nav--overlay
+                ul.nav__list.nav__list--overlay
+                  each item in navList
+                    li.nav__item.nav__item--overlay
+                      a(href=`${item[1]}`, title=`${item[0]}`).nav__link.nav__link--overlay #{item[0]}
+            .overlay-menu__soc
+              ul.soc.soc--overlay
+                each item in socList
+                  li.soc__item
+                    a(href=`${item[1]}`).soc__link
+                      +icon(`${item[0]}`, 'soc__icon')
 
     include ./templates/entry.pug

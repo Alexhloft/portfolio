@@ -3,7 +3,9 @@ if (process.env.NODE_ENV === "development") {
   require("file-loader!./index.pug");
 }
 
-import './scripts/parallax';
+import "./scripts/parallax";
+import "./scripts/menu-btn";
+import "./scripts/scroll-to";
 import "./scripts/skills";
 import "./scripts/reviews";
 import "./scripts/works";

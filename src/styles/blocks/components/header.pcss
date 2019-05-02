@@ -20,6 +20,9 @@
 }
 
 .header__soc {
+  @include tablets {
+    margin-right: 80px;
+  }
   @include phones {
     display: none;
   }
@@ -30,8 +33,7 @@
   @include tablets {
     display: block;
   }
-  background: gray;
-  width: 25px;
-  height: 20px;
-  margin-left: 90px;
+  position: fixed;
+  z-index: 100;
+  right: 40px;
 }
