@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[7],{621:function(n,e,o){"use strict";o.r(e);var s=o(29),i=Object(s.a)({},void 0,void 0,!1,null,null,null);i.options.__file="src/admin/components/pages/reviews.vue",e.default=i.exports}}]);
