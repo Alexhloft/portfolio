@@ -10,6 +10,8 @@
         section.tabs-container
           tabs
 
+        
+
 </template>
 
 <script>
@@ -37,7 +39,9 @@
       };
     },
     components: {
-      appInput
+      appInput,
+      appHeader: () => import("components/header"),
+      tabs: () => import("components/tabs"),
     },
     methods: {
       async login() {
